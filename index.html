@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Slide 模板</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/simple.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/github.css" />
+
+    <link rel="stylesheet" href="./assets/custom.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="<!--s-->" data-separator-vertical="<!--v-->">
+          <textarea data-template>
+            
+
+<div class="middle center">
+<div style="width: 100%">
+
+
+
+> 生涯宣讲
+
+<br/>
+
+**俞志炜**
+
+Note:
+这不是经验输出，
+而是我作为一名仍在探索中的学生，
+如何做选择、如何判断、如何行动。
+
+<!--s-->
+
+## 初入大学时
+
+目标：轻松地挣很多钱
+
+信息驳杂：
+- 论坛上学长学姐对专业，职业的不同见解
+- 信度低，不断传播焦虑的营销号
+- 父母的干涉
+- 朋辈压力
+- ...
+
+所有建议似乎都有一定道理，但没法都听取
+陷入迷茫，我学的知识对实现我的目标是否有意义？我会不会在错误的路上越走越远？怎么找到所谓正确的方向？
+
+<!--s-->
+
+## 尝试
+
+规划什么的太累了，
+
+都说学计算机好，那不妨先学一下试试？
+
+充实我一整个大一的公开课
+- CS61A
+- CS61B
+- CS61C
+- 吴恩达coursera机器学习
+- CS231n
+- ...
+
+我决定在计算机的世界继续探索
+<!--v-->
+
+### 同样有很多方向
+
+- 传统开发
+    - 前端
+    - 后端
+    - 客户端
+    - ...
+- 大模型算法
+    - 搜广推
+    - Agent
+    - 推理加速
+    - 具身智能
+    - ...
+
+<!--v-->
+
+### 对规划新的理解
+
+有一个目标，具体如何实现没必要过多纠结，
+
+折返不代表选错了，通往理想的路上不可能次次选对
+
+在判断并修正的循环中积累宝贵经验
+
+<!--s-->
+
+## 目标的变化
+
+轻松的赚大钱 -> 成为一名优秀的AI算法工程师
+
+
+<!--v-->
+
+## 从进入大学开始走了多远？
+
+- 刷的相关课程
+- 进实验室做科研
+- 认识了很多志同道合的人
+- ...
+
+过去一年做的事对实现目标不是都有帮助。
+
+正如吃下去的东西没有全部变成营养
+
+但不能因此不吃饭了吧。
+
+<!--v-->
+
+
+## 仍在路上
+
+今天分享的也只是阶段性的思考。
+
+希望我的宣讲能让大家少点焦虑，多点行动，对“不确定”更加坦然。
+
+
+
+<br/>
+
+**谢谢大家**!
+
+
+
+          </textarea>
+        </section>
+      </div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./mermaid/dist/mermaid.min.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
+        highlight: {
+          highlightOnLoad: false
+        },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","transitionSpeed":"fast","center":false,"slideNumber":"c/t","width":1000,"_":["main.md"],"static":"/Users/amaranth/reveal_md_test","assets-dir":"assets","assetsDir":"assets"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+      Reveal.addEventListener('ready', function (event) {
+        const blocks = Reveal.getRevealElement().querySelectorAll('pre code:not(.mermaid)');
+        const hlp = Reveal.getPlugin('highlight');
+        blocks.forEach(hlp.highlightBlock);
+      });
+    </script>
+
+    <script>
+      const mermaidOptions = extend({ startOnLoad: false }, {});
+      mermaid.startOnLoad = false;
+      mermaid.initialize(mermaidOptions);
+      const cb = function (event) { mermaid.init(mermaidOptions, '.stack.present>.present pre code.mermaid'); };
+      Reveal.addEventListener('ready', cb);
+      Reveal.addEventListener('slidetransitionend', cb);
+    </script>
+  </body>
+</html>
